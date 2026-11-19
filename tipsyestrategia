@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips y Estrategia | A por plaza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --rainbow-vivid: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);
+            --grad-1: linear-gradient(135deg, #FF512F, #DD2476);
+            --grad-2: linear-gradient(135deg, #4776E6, #8E54E9);
+            --grad-3: linear-gradient(135deg, #00F260, #0575E6);
+            --grad-blog: linear-gradient(135deg, #FDC830, #F37335);
+
+            --text-dark: #1A1A1A;
+            --white: #ffffff;
+            --border-thick: 5px solid #1A1A1A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+            color: var(--text-dark);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 1. HEADER ARCOÍRIS */
+        .header-rainbow {
+            background: var(--rainbow-vivid);
+            padding: 70px 20px;
+            text-align: center;
+            border-bottom: var(--border-thick);
+            position: relative;
+        }
+
+        .header-rainbow h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: white;
+            text-shadow: 6px 6px 0px var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 1.05;
+        }
+
+        .header-rainbow p {
+            background: var(--text-dark);
+            color: white;
+            display: inline-block;
+            padding: 12px 30px;
+            font-weight: 900;
+            margin-top: 25px;
+            transform: rotate(-1deg);
+            border: 3px solid white;
+            max-width: 750px;
+            font-size: 1.1rem;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .main-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+
+        .section-badge {
+            display: inline-block;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            background: var(--text-dark);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 6px 6px 0px #FF7F00;
+        }
+
+        /* 2. APARTADO: CONSEJOS */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .tip-card {
+            background: var(--white);
+            border: var(--border-thick);
+            border-radius: 30px;
+            padding: 35px 30px;
+            box-shadow: 10px 10px 0px var(--text-dark);
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .tip-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 14px 14px 0px var(--text-dark);
+        }
+
+        .tip-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: white;
+            border: 3px solid var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .tag-1 { background: var(--grad-1); }
+        .tag-2 { background: var(--grad-2); }
+        .tag-3 { background: var(--grad-3); color: var(--text-dark); }
+
+        .tip-card h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .tip-card p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* 3. APARTADO: DESCARGABLES */
+        .downloads-section {
+            margin-bottom: 80px;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .download-card {
+            border: var(--border-thick);
+            border-radius: 35px;
+            padding: 40px 25px;
+            text-align: center;
+            color: white;
+            box-shadow: 10px 10px 0px var(--text-dark);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .download-card:hover { transform: scale(1.02); }
+        .download-card i { font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.25)); }
+        .download-card h3 { font-family: 'Archivo Black', sans-serif; font-size: 1.5rem; margin-bottom: 10px; text-transform: uppercase; }
+        .download-card p { font-weight: 600; margin-bottom: 25px; line-height: 1.4; }
+
+        .dl-1 { background: var(--grad-1); }
+        .dl-2 { background: var(--grad-2); }
+        .dl-3 { background: var(--grad-3); }
+
+        .btn-white {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 900;
+            border: 3px solid var(--text-dark);
+            box-shadow: 4px 4px 0px var(--text-dark);
+            transition: 0.2s;
+        }
+
+        .btn-white:hover {
+            background: #FFFF00;
+            transform: translate(-2px, -2px);
+        }
+
+        /* 4. APARTADO: MÁS EN MI BLOG */
+        .blog-section {
+            background: var(--white);
+            border: var(--border-thick);
+            border-radius: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            overflow: hidden;
+            box-shadow: 12px 12px 0px var(--text-dark);
+            margin-bottom: 70px;
+        }
+
+        .blog-sidebar {
+            background: var(--grad-blog);
+            padding: 50px;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: var(--border-thick);
+        }
+
+        .blog-content { padding: 45px; background: white; }
+
+        .post-preview {
+            border-bottom: 2px dashed #ddd;
+            padding: 18px 0;
+            transition: 0.2s;
+        }
+        .post-preview:last-of-type { border-bottom: none; }
+        .post-preview:hover { padding-left: 10px; }
+        .post-preview a { text-decoration: none; color: var(--text-dark); }
+        .post-preview h3 { font-size: 1.25rem; margin-top: 5px; }
+        .post-preview small { font-weight: 800; color: #F37335; text-transform: uppercase; }
+
+        /* 5. BOTÓN VOLVER AL INICIO */
+        .back-home-container {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 20px 45px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-dark);
+            background: #FFFF00;
+            border: var(--border-thick);
+            border-radius: 20px;
+            box-shadow: 8px 8px 0px var(--text-dark);
+            transition: 0.2s;
+        }
+
+        .btn-home:hover {
+            background: #00FF00;
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--text-dark);
+        }
+
+        /* 6. FOOTER */
+        footer {
+            margin-top: 80px;
+            padding: 80px 20px;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .cta-final {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            color: #FFFF00;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+            transition: 0.2s;
+        }
+
+        .cta-final:hover { transform: scale(1.05); color: #00FF00; }
+
+        @media (max-width: 768px) {
+            .blog-sidebar {
+                border-right: none;
+                border-bottom: var(--border-thick);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-rainbow">
+        <h1>TIPS Y ESTRATEGIA</h1>
+        <p>METODOLOGÍAS DE ESTUDIO, TÉCNICAS DE CONCENTRACIÓN Y CONSEJOS REALES PARA NO MORIR EN EL INTENTO 🧠🔥</p>
+    </header>
+
+    <div class="main-container">
+
+        <!-- APARTADO 1: CONSEJOS -->
+        <section>
+            <div class="section-badge" style="box-shadow: 6px 6px 0px #DD2476;">
+                <i class="fas fa-lightbulb"></i> CONSEJOS DE SUPERVIVENCIA
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <span class="tip-tag tag-1">Memorización</span>
+                    <h3>Repetición Espaciada y Vueltas</h3>
+                    <p>Aquí podrás explicar cómo organizas tus vueltas al temario, cuándo repasas leyes y cómo evitas olvidar los temas antiguos.</p>
+                </div>
+
+                <div class="tip-card">
+                    <span class="tip-tag tag-2">Concentración</span>
+                    <h3>Bloques de Estudio Profundo</h3>
+                    <p>Espacio reservado para tu técnica favorita (Pomodoro adaptado, bloques de 90 minutos, gestión del móvil, etc.).</p>
+                </div>
+
+                <div class="tip-card">
+                    <span class="tip-tag tag-3">Mentalidad</span>
+                    <h3>Gestión de Días Malos</h3>
+                    <p>Consejos reales sobre qué hacer cuando no te entra ni una línea, cómo descansar sin culpa y mantener la constancia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- APARTADO 2: DESCARGABLES -->
+        <section class="downloads-section">
+            <div class="section-badge" style="box-shadow: 6px 6px 0px #0575E6;">
+                <i class="fas fa-file-download"></i> DESCARGABLES GRATUITOS
+            </div>
+
+            <div class="download-grid">
+                <div class="download-card dl-1">
+                    <div>
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>PLANNER SEMANAL</h3>
+                        <p>Plantilla en PDF para organizar tus bloques de estudio, repasos y días de descanso.</p>
+                    </div>
+                    <a href="#" class="btn-white">DESCARGAR PDF</a>
+                </div>
+
+                <div class="download-card dl-2">
+                    <div>
+                        <i class="fas fa-tasks"></i>
+                        <h3>TRACKER DE VUELTAS</h3>
+                        <p>Hoja de control visual para marcar el dominio de cada tema y tus notas en los test.</p>
+                    </div>
+                    <a href="#" class="btn-white">DESCARGAR PDF</a>
+                </div>
+
+                <div class="download-card dl-3">
+                    <div>
+                        <i class="fas fa-stopwatch"></i>
+                        <h3>GUÍA ANTI-PROCRASTINACIÓN</h3>
+                        <p>Checklist rápido con pasos accionables para sentarte a estudiar cuando cero ganas.</p>
+                    </div>
+                    <a href="#" class="btn-white">DESCARGAR PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- APARTADO 3: MÁS EN MI BLOG -->
+        <section class="blog-section">
+            <div class="blog-sidebar">
+                <h2 style="font-family: 'Archivo Black'; font-size: 2.8rem; line-height: 1.05;">MÁS EN MI BLOG</h2>
+                <p style="margin-top: 20px; font-weight: 800; font-size: 1.15rem;">Artículos detallados sobre planificación, técnica de test y estrategia pura.</p>
+            </div>
+            <div class="blog-content">
+                <div class="post-preview">
+                    <small>Planificación</small>
+                    <a href="#"><h3>Cómo estructurar tu semana si estudias y trabajas a la vez.</h3></a>
+                </div>
+                <div class="post-preview">
+                    <small>Técnica de Examen</small>
+                    <a href="#"><h3>Estrategia para enfrentarte a preguntas tipo test trampa.</h3></a>
+                </div>
+                <div class="post-preview">
+                    <small>Productividad</small>
+                    <a href="#"><h3>Mi setup de escritorio minimalista para evitar distracciones.</h3></a>
+                </div>
+                <a href="#" style="display:inline-block; margin-top:25px; font-weight:900; color:var(--text-dark); text-decoration: none;">VER TODOS LOS ARTÍCULOS →</a>
+            </div>
+        </section>
+
+        <!-- BOTÓN VOLVER AL INICIO -->
+        <div class="back-home-container">
+            <a href="https://desicuti.github.io/apporplaza1.github.io/index.html" class="btn-home">
+                <i class="fas fa-arrow-left"></i> VOLVER AL INICIO
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="https://www.youtube.com/@aporplaza" target="_blank" class="cta-final">¡DAME APOYO EN YOUTUBE!</a>
+        <p style="font-weight: 300; opacity: 0.6;">© 2026 A POR PLAZA | TU HUB DE CONFIANZA</p>
+    </footer>
+
+</body>
+</html>
